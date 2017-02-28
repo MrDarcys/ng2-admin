@@ -71,7 +71,7 @@ module.exports = function (options) {
        *
        * See: http://webpack.github.io/docs/configuration.html#output-sourcemapfilename
        */
-      sourceMapFilename: '[file].map',
+      sourceMapFilename: '[name].map',
 
       /** The filename of non-entry chunks as relative path
        * inside the output.path directory.
@@ -134,7 +134,7 @@ module.exports = function (options) {
         },
         dllDir: helpers.root('dll'),
         webpackConfig: webpackMergeDll(commonConfig({env: ENV}), {
-          devtool: 'eval-source-map',
+          devtool: 'cheap-module-source-map',
           plugins: []
         })
       }),
